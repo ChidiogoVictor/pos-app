@@ -14,7 +14,7 @@ const Header = () => {
       </div>
 
       {/* SEARCH */}
-      <div className="flex items-center  bg-[#1f1f1f] rounded-[20px] w-[350px]">
+      <div className="flex items-center rounded-[20px] w-[350px]">
         <input
           type="text"
           placeholder="Search"
