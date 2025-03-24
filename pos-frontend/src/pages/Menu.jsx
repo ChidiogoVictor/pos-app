@@ -6,9 +6,9 @@ import MenuContainer from "../components/menu/MenuContainer";
 
 const Menu = () => {
   return (
-    <section className="bg-gray-800 h-[calc(100vh-5rem)] overflow-hidden flex gap-3">
+    <section className="bg-gray-800 h-[calc(100vh-5rem)] flex gap-3">
       {/* Left Div*/}
-      <div className="flex-3">
+      <div className="flex-3 overflow-y-scroll mb-16">
         <div className="flex items-center justify-between px-6 py-4">
           <div className="flex items-center gap-4">
             <BackButton />
