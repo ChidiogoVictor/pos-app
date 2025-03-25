@@ -4,6 +4,19 @@ import { GrRadialSelected } from "react-icons/gr";
 
 const MenuContainer = () => {
   const [selected, setSelected] = useState(menus[0]);
+  const [itemCount, setItemCount] = useState(0);
+  const [itemId, setItemId] = useState();
+  const increment = (id) => {
+    setItemId(id);
+    if (itemCount >= 4) return;
+    setItemCount((prev) => prev + 1);
+  };
+
+  const decrement = (id) => {
+    setItemId(id);
+    if (itemCount <= 0) return;
+    setItemCount((prev) => prev - 1);
+  };
 
   return (
     <>
@@ -12,9 +25,13 @@ const MenuContainer = () => {
           return (
             <div
               key={menu.id}
-              className="flex flex-col items-center justify-between p-4 rounded-lg h-[100px] cursor-pointer"
+              className="flex flex-col items-start justify-between p-3 rounded-lg h-[80px] cursor-pointer"
               style={{ backgroundColor: menu.bgColor }}
-              onClick={() => setSelected(menu)}
+              onClick={() => {
+                setSelected(menu);
+                setItemId(0);
+                setItemCount(0);
+              }}
             >
               <div className="flex items-center justify-between w-full">
                 <h1 className="text-white text-lg font-semibold">
@@ -34,25 +51,40 @@ const MenuContainer = () => {
       <hr className="border-gray-700 border-t-2 mt-4" />
 
       <div className="grid grid-cols-4 gap-4 px-10 py-4 w-[100%]">
-        {menus.map((menu) => {
+        {selected?.items.map((menu) => {
           return (
             <div
               key={menu.id}
-              className="flex flex-col items-center justify-between p-4 rounded-lg h-[100px] cursor-pointer"
-              style={{ backgroundColor: menu.bgColor }}
-              onClick={() => setSelected(menu)}
+              className="flex flex-col items-start justify-between p-3 rounded-lg h-[100px] cursor-pointer hover:bg-gray-900 bg-black"
             >
               <div className="flex items-center justify-between w-full">
                 <h1 className="text-white text-lg font-semibold">
-                  {menu.icon} {menu.name}
+                  {menu.name}
                 </h1>
-                {selected.id == menu.id && (
-                  <GrRadialSelected className="text-white" size={20} />
-                )}
               </div>
-              <p className="text-gray-300 text-sm font-semibold">
-                {menu.items.length} Items
-              </p>
+              <div className="flex items-center justify-between w-full">
+                <p className="text-gray-300 text-sm font-semibold">
+                  # {menu.price}
+                </p>
+                <div className="flex items-center justify-between bg-gray-800 px-1 py-1 rounded-lg gap-3">
+                  <button
+                    onClick={() => decrement(menu.id)}
+                    className="text-yellow-500 text-2xl"
+                  >
+                    &minus;
+                  </button>
+                  <span className="text-white">
+                    {" "}
+                    {menu.id === itemId ? itemCount : "0"}
+                  </span>
+                  <button
+                    onClick={() => increment(menu.id)}
+                    className="text-yellow-500 text-2xl"
+                  >
+                    &#43;
+                  </button>
+                </div>
+              </div>
             </div>
           );
         })}
