@@ -24,7 +24,7 @@ const BottomNav = () => {
   };
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-gray-900 p-2 h-16 flex justify-around">
+    <div className="fixed bottom-0 left-0 right-0 bg-gray-900 p-2 h-14 flex justify-around">
       <button
         onClick={() => navigate("/")}
         className="flex items-center justify-center text-white bg-gray-700 w-[150px] rounded-[20px]"

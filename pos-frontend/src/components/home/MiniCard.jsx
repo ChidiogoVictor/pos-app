@@ -2,7 +2,7 @@ import React from "react";
 
 const MiniCard = ({ title, icon, number, footerNum }) => {
   return (
-    <div className="bg-gray-950 py-3 px-5 rounded-lg w-[50%]">
+    <div className="bg-gray-950 py-2 px-5 rounded-lg w-[50%]">
       <div className="flex items-center justify-between">
         <h1 className="text-white text-lg font-semibold tracking-wide">
           {title}
@@ -15,8 +15,8 @@ const MiniCard = ({ title, icon, number, footerNum }) => {
           {icon}
         </button>
       </div>
-      <div>
-        <h1 className="text-white text-2xl font-bold mt-3">
+      <div className="flex justify-between">
+        <h1 className="text-white text-2xl font-bold mt-1">
           {title === "Total Earnings" ? `# ${number}` : number}
         </h1>
         <h1 className="text-white text-lg mt-2">

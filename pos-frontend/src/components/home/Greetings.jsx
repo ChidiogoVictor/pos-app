@@ -37,7 +37,7 @@ const Greetings = () => {
     ).padStart(2, "0")}:${String(date.getSeconds()).padStart(2, "0")}`;
 
   return (
-    <div className="flex justify-between items-center px-8 mt-3">
+    <div className="flex justify-between items-center px-8 mt-2">
       {/* Left Greeting Section */}
       <div>
         <h1 className="text-white text-xl font-semibold tracking-wide">
