@@ -2,7 +2,7 @@ import React from "react";
 import { getRandomBG } from "../../utils";
 import { useNavigate } from "react-router-dom";
 
-const TableCard = ({ name, status, initials, seats }) => {
+const TableCard = ({ name, status, initial, seats }) => {
   const navigate = useNavigate();
   const handleClick = () => {
     if (status === "Booked") return;
@@ -27,7 +27,7 @@ const TableCard = ({ name, status, initials, seats }) => {
       </div>
       <div className="flex items-center justify-center my-5">
         <h1 className={`${getRandomBG()} text-white rounded-full p-3 text-xl`}>
-          {initials}
+          {initial}
         </h1>
       </div>
       <p className="text-white text-xs">

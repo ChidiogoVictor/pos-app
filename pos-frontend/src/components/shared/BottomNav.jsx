@@ -3,12 +3,13 @@ import { FaHome } from "react-icons/fa";
 import { MdOutlineReorder, MdTableBar } from "react-icons/md";
 import { CiCircleMore } from "react-icons/ci";
 import { BiSolidDish } from "react-icons/bi";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import Modal from "./Modal";
 import { useState } from "react";
 
 const BottomNav = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [guestCount, setGuestCount] = useState(0);
   const openModal = () => setIsModalOpen(true);
@@ -23,34 +24,48 @@ const BottomNav = () => {
     setGuestCount((prev) => prev - 1);
   };
 
+  const isActive = (path) => location.pathname === path;
+
   return (
     <div className="fixed bottom-0 left-0 right-0 bg-gray-900 p-2 h-14 flex justify-around">
       <button
         onClick={() => navigate("/")}
-        className="flex items-center justify-center text-white bg-gray-700 w-[150px] rounded-[20px]"
+        className={`flex items-center justify-center font-bold ${
+          isActive("/") ? "text-white bg-gray-700" : "text-gray-300"
+        } w-[150px] rounded-[20px]`}
       >
         <FaHome className="inline mr-2 text-xl" />
         <p>Home</p>
       </button>
       <button
         onClick={() => navigate("/orders")}
-        className="flex items-center justify-center text-white bg-gray-700 w-[150px] rounded-[20px]"
+        className={`flex items-center justify-center font-bold ${
+          isActive("/orders") ? "text-white bg-gray-700" : "text-gray-300"
+        } w-[150px] rounded-[20px]`}
       >
         <MdOutlineReorder className="inline mr-2 text-xl" />
         <p>Orders</p>
       </button>
       <button
         onClick={() => navigate("/tables")}
-        className="flex items-center justify-center text-white bg-gray-700 w-[150px] rounded-[20px]"
+        className={`flex items-center justify-center font-bold ${
+          isActive("/tables") ? "text-white bg-gray-700" : "text-gray-300"
+        } w-[150px] rounded-[20px]`}
       >
         <MdTableBar className="inline mr-2 text-xl" />
         <p>Tables</p>
       </button>
-      <button className="flex items-center justify-center text-white bg-gray-700 w-[150px] rounded-[20px]">
+      <button
+        onClick={() => navigate("/more")}
+        className={`flex items-center justify-center font-bold ${
+          isActive("/more") ? "text-white bg-gray-700" : "text-gray-300"
+        } w-[150px] rounded-[20px]`}
+      >
         <CiCircleMore className="inline mr-2 text-xl" />
         <p>More</p>
       </button>
       <button
+        disabled={isActive("/tables") || isActive("/menu")}
         onClick={openModal}
         className="absolute bottom-9 bg-amber-300 text-white rounded-full p-3 items-center"
       >
