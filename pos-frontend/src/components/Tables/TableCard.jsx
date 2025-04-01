@@ -1,16 +1,20 @@
 import React from "react";
 import { getRandomBG } from "../../utils";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { updateTable } from "../../redux/slices/customerSlice";
 
 const TableCard = ({ name, status, initial, seats }) => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
-  const handleClick = () => {
+  const handleClick = (name) => {
     if (status === "Booked") return;
+    dispatch(updateTable({ tableNo: name }));
     navigate("/menu");
   };
   return (
     <div
-      onClick={handleClick}
+      onClick={() => handleClick(name)}
       className="w-[270px] bg-gray-600 hover:bg-gray-500 p-3 rounded-lg mb-1 cursor-pointer"
     >
       <div className="flex items-center justify-between px-1">

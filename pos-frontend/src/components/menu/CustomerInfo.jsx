@@ -1,11 +1,13 @@
 import React from "react";
 
 const CustomerInfo = () => {
+
+  const customerData = useSelector((state) => state.customer);
   return (
     <div className="flex items-center justify-between px-4 py-3">
       <div className="flex flex-col items-start">
         <h1 className="text-md text-white font-semibold tracking-wide">
-          Customer Name
+          {customerData.customerName}
         </h1>
         <p className="text-sm text-gray-400 font-medium mt-1"># 101 / Naira</p>
         <p className="text-sm text-gray-400 font-medium mt-2">

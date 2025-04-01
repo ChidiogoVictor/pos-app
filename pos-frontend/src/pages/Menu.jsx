@@ -5,9 +5,11 @@ import { MdRestaurantMenu } from "react-icons/md";
 import MenuContainer from "../components/menu/MenuContainer";
 import CustomerInfo from "../components/menu/CustomerInfo";
 import CartInfo from "../components/menu/CartInfo";
-
+import { useSelector } from "react-redux";
 
 const Menu = () => {
+  const customerData = useSelector((state) => state.customer);
+
   return (
     <section className="bg-gray-800 h-[calc(100vh-5rem)] flex gap-3">
       {/* Left Div*/}
@@ -24,9 +26,9 @@ const Menu = () => {
               <MdRestaurantMenu className="text-white text-2xl" />
               <div className="flex flex-col items-start">
                 <h1 className="text-md text-white font-semibold">
-                  Customer Name
+                  {customerData.customerName}
                 </h1>
-                <p className="text-xs text-gray-200 font-medium">Table No: 2</p>
+                <p className="text-xs text-gray-200 font-medium">{customerData.tableNo}</p>
               </div>
             </div>
           </div>
@@ -40,7 +42,6 @@ const Menu = () => {
         <hr className="border-gray-800 border-t-2" />
         {/* Cart Items*/}
         <CartInfo />
-        
       </div>
       <BottomNav />
     </section>
