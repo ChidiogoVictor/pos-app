@@ -38,6 +38,7 @@ const Tables = () => {
         {tables.map((table) => {
           return (
             <TableCard
+              key={table.id}
               id={table.id}
               name={table.name}
               status={table.status}
