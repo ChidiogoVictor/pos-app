@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useRef } from "react";
 import { FaNotesMedical } from "react-icons/fa";
 import { RiDeleteBin2Fill } from "react-icons/ri";
 import Bill from "./Bill";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { removeItem } from "../../redux/slices/cartSlice";
 
 const CartInfo = () => {
   const cartData = useSelector((state) => state.cart);
+  const scrollRef = useRef();
+  const dispatch = useDispatch();
+  const handleRemove = (itemId) => {
+    dispatch(removeItem(itemId));
+  };
 
   return (
     <div className="pl-4 py-2">
@@ -33,6 +39,7 @@ const CartInfo = () => {
                 <div className="flex items-center justify-between mt-1">
                   <div className="flex items-center gap-3">
                     <RiDeleteBin2Fill
+                      onClick={() => handleRemove(item.id)}
                       className="text-white cursor-pointer"
                       size={20}
                     />
