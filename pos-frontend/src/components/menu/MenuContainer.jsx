@@ -55,7 +55,7 @@ const MenuContainer = () => {
               }}
             >
               <div className="flex items-center justify-between w-full">
-                <h1 className="text-white text-lg font-semibold">
+                <h1 className="text-white text-base font-semibold">
                   {menu.icon} {menu.name}
                 </h1>
                 {selected.id == menu.id && (

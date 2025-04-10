@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { FaNotesMedical } from "react-icons/fa";
 import { RiDeleteBin2Fill } from "react-icons/ri";
 import Bill from "./Bill";
@@ -9,6 +9,16 @@ const CartInfo = () => {
   const cartData = useSelector((state) => state.cart);
   const scrollRef = useRef();
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollTo({
+        top: scrollRef.current.scrollHeight,
+        behavior: "smooth",
+      });
+    }
+  }, [cartData]);
+
   const handleRemove = (itemId) => {
     dispatch(removeItem(itemId));
   };
@@ -19,9 +29,9 @@ const CartInfo = () => {
         Order Details
       </h1>
 
-      <div className=" overflow-y-scroll h-[240px]">
+      <div className=" overflow-y-scroll h-[260px]" ref={scrollRef}>
         {cartData.length === 0 ? (
-          <p className="text-gray-300 text-sm flex justify-center items-center h-[240px] ">
+          <p className="text-gray-300 text-sm flex justify-center items-center h-[260px]">
             Your cart is empty. Start adding items.
           </p>
         ) : (
