@@ -1,0 +1,21 @@
+[+] Create Project Directory
+[+] Create an NPM Project and install all dependecies
+    - dependencies
+        - express mongoose dotenv
+    - Dev dependencies
+        - nodemon
+[+] Create express server - app.js
+[+] Folder Structure
+[+] Database Setup
+[-] Error Handling Setup (Global Error Handler)
+[-] API Creation
+    - Auth APIs
+        - Register
+        - Login
+    - Order APIs
+        - GET, POST Order
+    - Table APIs
+        - GET, POST Table
+    - Category + Items APIs (Optional)
+    - Payment Related APIs (PayStack or Flutterwave)
+[-] Deploy on AWS or DigitalOcean
