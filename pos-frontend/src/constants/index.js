@@ -96,37 +96,37 @@ export const tables = [
 export const startersItem = [
   {
     id: 1,
-    name: "Paneer Tikka",
+    name: "Moi Moi",
     price: 250,
     category: "Vegetarian",
   },
   {
     id: 2,
-    name: "Chicken Tikka",
+    name: "Pepper Chicken",
     price: 300,
     category: "Non-Vegetarian",
   },
   {
     id: 3,
-    name: "Tandoori Chicken",
+    name: "Suya",
     price: 350,
     category: "Non-Vegetarian",
   },
   {
     id: 4,
-    name: "Samosa",
+    name: "Akara",
     price: 100,
     category: "Vegetarian",
   },
   {
     id: 5,
-    name: "Aloo Tikki",
+    name: "Yam Balls",
     price: 120,
     category: "Vegetarian",
   },
   {
     id: 6,
-    name: "Hara Bhara Kebab",
+    name: "Vegetable Puff",
     price: 220,
     category: "Vegetarian",
   },
@@ -135,37 +135,37 @@ export const startersItem = [
 export const mainCourse = [
   {
     id: 1,
-    name: "Butter Chicken",
+    name: "Rice with Yam Sauce",
     price: 400,
     category: "Non-Vegetarian",
   },
   {
     id: 2,
-    name: "Paneer Butter Masala",
+    name: "Efo Riro with Tofu",
     price: 350,
     category: "Vegetarian",
   },
   {
     id: 3,
-    name: "Chicken Biryani",
+    name: "Jollof Rice with Chicken",
     price: 450,
     category: "Non-Vegetarian",
   },
   {
     id: 4,
-    name: "Dal Makhani",
+    name: "Beans Porridge",
     price: 180,
     category: "Vegetarian",
   },
   {
     id: 5,
-    name: "Kadai Paneer",
+    name: "Yam Porridge with Ugu",
     price: 300,
     category: "Vegetarian",
   },
   {
     id: 6,
-    name: "Rogan Josh",
+    name: "Egusi Soup with Assorted Meat",
     price: 500,
     category: "Non-Vegetarian",
   },
@@ -174,7 +174,7 @@ export const mainCourse = [
 export const beverages = [
   {
     id: 1,
-    name: "Masala Chai",
+    name: "Chapman",
     price: 50,
     category: "Hot",
   },
@@ -186,7 +186,7 @@ export const beverages = [
   },
   {
     id: 3,
-    name: "Mango Lassi",
+    name: "Palm Wine",
     price: 120,
     category: "Cold",
   },
@@ -213,64 +213,64 @@ export const beverages = [
 export const soups = [
   {
     id: 1,
-    name: "Tomato Soup",
+    name: "Okra Soup",
     price: 120,
     category: "Vegetarian",
   },
   {
     id: 2,
-    name: "Sweet Corn Soup",
+    name: "Efo Riro",
     price: 130,
     category: "Vegetarian",
   },
   {
     id: 3,
-    name: "Hot & Sour Soup",
+    name: "Ogbono Soup",
     price: 140,
     category: "Vegetarian",
   },
   {
     id: 4,
-    name: "Chicken Clear Soup",
+    name: "Oha Soup with Goat Meat",
     price: 160,
     category: "Non-Vegetarian",
   },
   {
     id: 5,
-    name: "Mushroom Soup",
+    name: "Banga Soup",
     price: 150,
-    category: "Vegetarian",
+    category: "Non-Vegetarian",
   },
   {
     id: 6,
-    name: "Lemon Coriander Soup",
+    name: "Afang Soup with Periwinkle",
     price: 110,
-    category: "Vegetarian",
+    category: "Non-Vegetarian",
   },
 ];
 
 export const desserts = [
   {
     id: 1,
-    name: "Gulab Jamun",
+    name: "Puff-Puff",
     price: 100,
     category: "Vegetarian",
   },
   {
     id: 2,
-    name: "Kulfi",
+    name: "Chin Chin",
     price: 150,
     category: "Vegetarian",
   },
   {
     id: 3,
-    name: "Chocolate Lava Cake",
+    name: "Coconut Candy",
     price: 250,
     category: "Vegetarian",
   },
   {
     id: 4,
-    name: "Ras Malai",
+    name: "Plantain Mosa",
     price: 180,
     category: "Vegetarian",
   },
@@ -339,32 +339,33 @@ export const alcoholicDrinks = [
 export const salads = [
   {
     id: 1,
-    name: "Caesar Salad",
+    name: "Nigerian Vegetable Salad",
     price: 200,
     category: "Vegetarian",
   },
   {
     id: 2,
-    name: "Greek Salad",
+    name: "Cabbage & Carrot Slaw",
     price: 250,
     category: "Vegetarian",
   },
   {
     id: 3,
-    name: "Fruit Salad",
+    name: "Tropical Fruit Mix",
     price: 150,
     category: "Vegetarian",
   },
   {
     id: 4,
-    name: "Chicken Salad",
+    name: "Chicken Mayo Salad",
     price: 300,
     category: "Non-Vegetarian",
   },
   {
     id: 5,
-    name: "Tuna Salad",
+    name: "Nigerian Tuna Salad",
     price: 350,
+    category: "Non-Vegetarian",
   },
 ];
 
