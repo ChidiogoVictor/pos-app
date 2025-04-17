@@ -3,7 +3,11 @@ const connectDB = require("./config/database");
 const config = require("./config/config");
 const globalErrorHandler = require("./middlewares/globalErrorHandler");
 const createHttpError = require("http-errors");
+
 const app = express();
+
+// Middlewares
+app.use(express.json());
 
 const PORT = config.port;
 connectDB();
