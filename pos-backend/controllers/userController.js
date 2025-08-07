@@ -18,7 +18,7 @@ const register = async (req, res, next) => {
     const isUserPresent = await User.findOne({ email });
     if (isUserPresent) {
       const error = createHttpError(400, "User already exists!");
-      next(error);
+      return next(error);
     }
 
     const user = { name, phone, email, password, role };
